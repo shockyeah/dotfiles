@@ -1,3 +1,4 @@
 neobundle.vim
 neocomplcache
+neomru.vim
 vimproc
