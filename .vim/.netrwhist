@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/shockyeah/Unity/Socialtest/SocialTest'
+let g:netrw_dirhist_2='/Users/shockyeah/Unity/SceneMergeTest/.git'
+let g:netrw_dirhist_3='/Users/shockyeah/Unity/unityfreecell'
+let g:netrw_dirhist_4='/Users/shockyeah/Unity/unityfreecell.bak/unityfreecell-iphone'
+let g:netrw_dirhist_5='/Users/shockyeah/Unity/unityfreecell/unityfreecell-iphone/ja.lproj/en.lproj'
+let g:netrw_dirhist_6='/Users/shockyeah/git/rubysample/config'
+let g:netrw_dirhist_7='/Users/shockyeah/.vim'
+let g:netrw_dirhist_8='/Users/shockyeah/.vim/bundle/neobundle.vim'
+let g:netrw_dirhist_9='/Users/shockyeah/.vim_runtime/vimrcs'
