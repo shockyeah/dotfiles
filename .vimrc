@@ -18,6 +18,9 @@ call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neomru.vim')
 " vim上でフォルダ移動 keymap Ctrl+e
 call dein#add('scrooloose/nerdtree')
+" vim colors
+call dein#add('w0ng/vim-hybrid')
+
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 " end
