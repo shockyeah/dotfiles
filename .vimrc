@@ -1,31 +1,27 @@
 " shockyeah's vimrc
 
 " ------------------------------------------------
-" NeoBundle
-" https://github.com/Shougo/neobundle.vim
+" dein.vim
+" https://github.com/Shougo/dein.vim
 " ------------------------------------------------
-set nocompatible
-filetype off
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#begin(expand('~/.vim/bundle/'))
+if &compatible
+  set nocompatible
 endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 " plugins
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/neocomplcache'
-" 最近使ったファイル表示 keymap 
-NeoBundle 'Shougo/neomru.vim'
+call dein#begin(expand('~/.vim/dein'))
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+call dein#add('Shougo/neocomplete.vim')
+" 最近使ったファイル表示
+call dein#add('Shougo/neomru.vim')
 " vim上でフォルダ移動 keymap Ctrl+e
-NeoBundle 'scrooloose/nerdtree'
+call dein#add('scrooloose/nerdtree')
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
-call neobundle#end()
-
-" ファイル形式別プラグインのロードを有効化
-filetype plugin on
-filetype indent on
+" end
+call dein#end()
 
 " ------------------------------------------------
 " Standard
