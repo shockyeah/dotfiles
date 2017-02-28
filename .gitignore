@@ -1,0 +1,11 @@
+# Mac finder artifacts                                                                                                                                
+.DS_Store
+
+# vim artifacts
+**.swp
+*~
+
+# vim bundles
+.vim/bundle
+
+

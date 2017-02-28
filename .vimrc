@@ -1,7 +1,8 @@
+" shockyeah's vimrc
+
 " ------------------------------------------------
-" Shougo neobundle plugin
-"
-" 参考:http://kaworu.jpn.org/vim/vimのPHP開発環境
+" NeoBundle
+" https://github.com/Shougo/neobundle.vim
 " ------------------------------------------------
 set nocompatible
 filetype off
@@ -10,14 +11,15 @@ if has('vim_starting')
   call neobundle#begin(expand('~/.vim/bundle/'))
 endif
 
-" 利用モジュール
+" plugins
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
-" Unite.vimで最近使ったファイルを表示できるようにする
+" 最近使ったファイル表示 keymap 
 NeoBundle 'Shougo/neomru.vim'
-" vim上でフォルダ移動
+" vim上でフォルダ移動 keymap Ctrl+e
 NeoBundle 'scrooloose/nerdtree'
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 call neobundle#end()
 
@@ -26,24 +28,12 @@ filetype plugin on
 filetype indent on
 
 " ------------------------------------------------
-" neocomplcache設定
+" Standard
 " ------------------------------------------------
-" 辞書ファイル
-autocmd BufRead *.php\|*.ctp\|*.tpl :set dictionary=~/.vim/dictionary/php.dict filetype=php
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_smart_case = 1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_manual_completion_start_length = 0
-let g:neocomplcache_caching_percent_in_statusline = 1
-let g:neocomplcache_enable_skip_completion = 1
-let g:neocomplcache_skip_input_time = '0.5'
-
-
-" setting
-"文字コードをUFT-8に設定
+" 文字コードをUFT-8に設定
 set fenc=utf-8
+" 改行コード
+set fileformats=unix,dos
 " バックアップファイルを作らない
 set nobackup
 " スワップファイルを作らない
@@ -54,18 +44,26 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
+" helpの言語の優先順位
+set helplang=ja,en
+" 改行時の自動コメントアウト無効
+autocmd FileType * setlocal formatoptions-=r
+autocmd FileType * setlocal formatoptions-=o
 
-
-" 見た目
+" ------------------------------------------------
+" Views
+" ------------------------------------------------
 " color scheme
 set background=dark
 colorscheme hybrid
 syntax on
+" アンチエイリアス(フォントを滑らかに)
+set antialias
 " 行番号を表示
 set number
 " 現在の行を強調表示
 set cursorline
-" 現在の行を強調表示（縦）
+" 現在の行を強調表示(縦)
 "set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
@@ -82,11 +80,6 @@ set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-" 自動補完機能無効化
-autocmd FileType * setlocal formatoptions-=r
-autocmd FileType * setlocal formatoptions-=o
-
-" Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
 set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
@@ -96,17 +89,37 @@ set tabstop=2
 " 行頭でのTab文字の表示幅
 set shiftwidth=2
 
-" 検索系
+" ------------------------------------------------
+" Search
+" ------------------------------------------------
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
 " 検索文字列に大文字が含まれている場合は区別して検索する
 set smartcase
 " 検索文字列入力時に順次対象文字列にヒットさせる
 set incsearch
-" 検索時に最後まで行ったら最初に戻る
-set wrapscan
+" 検索を循環させない
+set nowrapscan
 " 検索語をハイライト表示
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+" ------------------------------------------------
+" neocomplcache設定 PHP補完用辞書ファイル
+" ------------------------------------------------
+" 辞書ファイル
+autocmd BufRead *.php\|*.ctp\|*.tpl :set dictionary=~/.vim/dictionary/php.dict filetype=php
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_smart_case = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_manual_completion_start_length = 0
+let g:neocomplcache_caching_percent_in_statusline = 1
+let g:neocomplcache_enable_skip_completion = 1
+let g:neocomplcache_skip_input_time = '0.5'
+
+" ------------------------------------------------
+"
+" ------------------------------------------------
