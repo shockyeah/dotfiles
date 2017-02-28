@@ -16,7 +16,8 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
 " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
-
+" vim上でフォルダ移動
+NeoBundle 'scrooloose/nerdtree'
 
 call neobundle#end()
 
@@ -81,6 +82,9 @@ set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
+" 自動補完機能無効化
+autocmd FileType * setlocal formatoptions-=r
+autocmd FileType * setlocal formatoptions-=o
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
