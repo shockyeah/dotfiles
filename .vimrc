@@ -27,6 +27,8 @@ call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/vimshell')
 " フォルダ移動
 call dein#add('scrooloose/nerdtree')
+" vim上でNode.jsを実行 \r
+call dein#add('thinca/vim-quickrun')
 " colorsheme hybrid
 call dein#add('w0ng/vim-hybrid')
 
@@ -42,8 +44,12 @@ noremap <C-P> :Unite buffer<CR>
 noremap <C-N> :Unite -buffer-name=file file<CR>
 " 'Shougo/neomru.vim' 最近使ったファイル一覧
 noremap <C-Z> :Unite file_mru<CR>
+" 'Shougo/vimshell' シェル起動
+nnoremap <silent> ,is :VimShell<CR>
+" 'Shougo/vimshell' ウインドウを分割してシェルを起動
+nnoremap <silent> ,isp :VimShellPop<CR>
 " 'scrooloose/nerdtree' フォルダ移動
-noremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 " ------------------------------------------------
 " Standard
