@@ -1,5 +1,4 @@
-#dotsfile
-
+#dotfiles
 ## Usage
 
 ```
