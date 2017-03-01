@@ -1,0 +1,49 @@
+# HTMLやCSSの構文を簡単に記述できる
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html']
+
+# HTML5のシンタックスハイライト
+[[plugins]]
+repo = 'othree/html5.vim'
+on_ft = ['html']
+
+# Lessのシンタックスハイライト
+[[plugins]]
+repo = 'groenewege/vim-less'
+on_ft = ['less']
+
+# CSSの色を表示
+[[plugins]]
+repo = 'ap/vim-css-color'
+on_ft = ['css', 'less', 'sass']
+
+# JavaScriptのインデンテーション
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript']
+
+# Markdownのシンタックスハイライト
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+on_ft = ['markdown']
+hook_source = ''' " {{{
+    " 自動で折りたたまないようにする
+    let g:vim_markdown_folding_disabled = 1
+''' # }}}
+
+# Markdownのプレビュー
+[[plugins]]
+repo = 'kannokanno/previm'
+depends = ['open-browser.vim']
+on_ft = ['markdown']
+hook_source = ''' " {{{
+    " リアルタイムプレビューを有効化
+    let g:previm_enable_realtime = 1
+''' # }}}
+
+# TOMLのシンタックスハイライト
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+

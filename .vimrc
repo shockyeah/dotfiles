@@ -1,39 +1,54 @@
+" ------------------------------------------------  
 " shockyeah's vimrc
+" ------------------------------------------------  
+set encoding=utf-8
+scriptencoding utf-8
 
-" ------------------------------------------------
-" dein.vim
-" https://github.com/Shougo/dein.vim
-" ------------------------------------------------
+" vi互換モードで起動されたとしてもこれはvimなので互換モードにしない
 if &compatible
   set nocompatible
 endif
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-" plugins
-call dein#begin(expand('~/.vim/dein'))
+" ------------------------------------------------  
+" プラグイン設定 {{{
+" ------------------------------------------------  
+" dein.vimに関するディレクトリ
+let s:dein_dir = expand('~/.vim/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+let s:rc_dir = expand('~/.vim/rc')
 
-call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/vimproc.vim', {'build': 'make'})
-" スニペット、定義ファイル 順:c+n 逆:c+p
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neosnippet-snippets') 
-" 入力補完
-call dein#add('Shougo/neocomplete.vim')
-" 便利なファイルオープン
-call dein#add('Shougo/unite.vim')  
-" 最近使ったファイル表示
-call dein#add('Shougo/neomru.vim')
-" vim上で実行できるシェル
-call dein#add('Shougo/vimshell')
-" フォルダ移動
-call dein#add('scrooloose/nerdtree')
-" vim上でNode.jsを実行 \r
-call dein#add('thinca/vim-quickrun')
-" colorsheme hybrid
-call dein#add('w0ng/vim-hybrid')
+if has('vim_starting')
+    " 起動にかかる読み込み時のみ以下を実行
+    if &runtimepath !~# '/dein.vim'
+        if !isdirectory(s:dein_repo_dir)
+            " dein.vimがcloneされていない場合はcloneする
+            execute '!git clone https://github.com/Shougo/dein.vim ' . s:dein_repo_dir
+        endif
+        " runtimepathの先頭にdein.vimを追加
+        execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+    endif
+endif
 
-" end
-call dein#end()
+if dein#load_state(s:dein_dir)
+    " キャッシュされたdeinの状態を読み込めなかった場合だけ以下を実行
+    call dein#begin(s:dein_dir)
+    " 必ず読み込むプラグインのリスト
+    call dein#load_toml(s:rc_dir . '/dein.toml', { 'lazy': 0 })
+    " 状況に応じて読み込むプラグインのリスト
+    call dein#load_toml(s:rc_dir . '/dein_lazy.toml', { 'lazy': 1 })
+    call dein#end()
+    " 次回起動時のために状態をキャッシュする
+    call dein#save_state()
+endif
+
+if dein#check_install()
+    " インストールされていないパッケージがある場合にはインストールを行う
+    call dein#install()
+endif
+
+" %がHTMLタグやdef~endなどに対しても有効になるように
+runtime macros/matchit.vim
+" }}}
 
 " ------------------------------------------------
 " key map
@@ -77,10 +92,11 @@ autocmd FileType * setlocal formatoptions-=o
 " ------------------------------------------------
 " Views
 " ------------------------------------------------
+" シンタックスハイライトをON
+syntax enable
 " color scheme
 set background=dark
 colorscheme hybrid
-syntax on
 " アンチエイリアス(フォントを滑らかに)
 set antialias
 " 行番号を表示
@@ -108,10 +124,11 @@ nnoremap k gk
 set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
 set expandtab
+set smarttab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=2
+set tabstop=4
 " 行頭でのTab文字の表示幅
-set shiftwidth=2
+set shiftwidth=4
 
 " ------------------------------------------------
 " Search
