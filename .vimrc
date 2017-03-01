@@ -14,17 +14,29 @@ call dein#begin(expand('~/.vim/dein'))
 call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 call dein#add('Shougo/neocomplete.vim')
+" 便利なファイルオープン
+call dein#add('Shougo/unite.vim')  
 " 最近使ったファイル表示
 call dein#add('Shougo/neomru.vim')
-" vim上でフォルダ移動 keymap Ctrl+e
+" vim上でフォルダ移動
 call dein#add('scrooloose/nerdtree')
 " vim colors
 call dein#add('w0ng/vim-hybrid')
 
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-
 " end
 call dein#end()
+
+" ------------------------------------------------
+" key map
+" ------------------------------------------------
+" control + p 'Shougo/unite.vim' バッファ一覧
+noremap <C-P> :Unite buffer<CR>
+" control + n 'Shougo/unite.vim' ファイル一覧
+noremap <C-N> :Unite -buffer-name=file file<CR>
+" control + z 'Shougo/neomru.vim' 最近使ったファイル一覧
+noremap <C-Z> :Unite file_mru<CR>
+" control+e 'scrooloose/nerdtree' フォルダ移動
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 " ------------------------------------------------
 " Standard
