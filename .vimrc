@@ -11,16 +11,23 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 " plugins
 call dein#begin(expand('~/.vim/dein'))
+
 call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+" スニペット、定義ファイル 順:c+n 逆:c+p
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets') 
+" 入力補完
 call dein#add('Shougo/neocomplete.vim')
 " 便利なファイルオープン
 call dein#add('Shougo/unite.vim')  
 " 最近使ったファイル表示
 call dein#add('Shougo/neomru.vim')
-" vim上でフォルダ移動
+" vim上で実行できるシェル
+call dein#add('Shougo/vimshell')
+" フォルダ移動
 call dein#add('scrooloose/nerdtree')
-" vim colors
+" colorsheme hybrid
 call dein#add('w0ng/vim-hybrid')
 
 " end
@@ -29,14 +36,14 @@ call dein#end()
 " ------------------------------------------------
 " key map
 " ------------------------------------------------
-" control + p 'Shougo/unite.vim' バッファ一覧
+" 'Shougo/unite.vim' バッファ一覧
 noremap <C-P> :Unite buffer<CR>
-" control + n 'Shougo/unite.vim' ファイル一覧
+" 'Shougo/unite.vim' ファイル一覧
 noremap <C-N> :Unite -buffer-name=file file<CR>
-" control + z 'Shougo/neomru.vim' 最近使ったファイル一覧
+" 'Shougo/neomru.vim' 最近使ったファイル一覧
 noremap <C-Z> :Unite file_mru<CR>
-" control+e 'scrooloose/nerdtree' フォルダ移動
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+" 'scrooloose/nerdtree' フォルダ移動
+noremap <silent><C-e> :NERDTreeToggle<CR>
 
 " ------------------------------------------------
 " Standard
@@ -120,16 +127,16 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " neocomplcache設定 PHP補完用辞書ファイル
 " ------------------------------------------------
 " 辞書ファイル
-autocmd BufRead *.php\|*.ctp\|*.tpl :set dictionary=~/.vim/dictionary/php.dict filetype=php
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_smart_case = 1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_manual_completion_start_length = 0
-let g:neocomplcache_caching_percent_in_statusline = 1
-let g:neocomplcache_enable_skip_completion = 1
-let g:neocomplcache_skip_input_time = '0.5'
+"autocmd BufRead *.php\|*.ctp\|*.tpl :set dictionary=~/.vim/dictionary/php.dict filetype=php
+"let g:neocomplcache_enable_at_startup = 1
+"let g:neocomplcache_enable_camel_case_completion = 1
+"let g:neocomplcache_enable_underbar_completion = 1
+"let g:neocomplcache_smart_case = 1
+"let g:neocomplcache_min_syntax_length = 3
+"let g:neocomplcache_manual_completion_start_length = 0
+"let g:neocomplcache_caching_percent_in_statusline = 1
+"let g:neocomplcache_enable_skip_completion = 1
+"let g:neocomplcache_skip_input_time = '0.5'
 
 " ------------------------------------------------
 "
