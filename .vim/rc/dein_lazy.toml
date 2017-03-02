@@ -20,7 +20,7 @@ on_ft = ['css', 'less', 'sass']
 
 # JavaScriptのインデンテーション
 [[plugins]]
-repo = 'pangloss/vim-javascript'
+repo = 'othree/yajs.vim'
 on_ft = ['javascript']
 
 # Markdownのシンタックスハイライト

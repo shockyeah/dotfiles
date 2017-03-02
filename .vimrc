@@ -6,7 +6,7 @@ scriptencoding utf-8
 
 " vi互換モードで起動されたとしてもこれはvimなので互換モードにしない
 if &compatible
-  set nocompatible
+    set nocompatible
 endif
 
 " ------------------------------------------------  
@@ -51,7 +51,7 @@ runtime macros/matchit.vim
 " }}}
 
 " ------------------------------------------------
-" key map
+" key map {{{
 " ------------------------------------------------
 " 'Shougo/unite.vim' バッファ一覧
 noremap <C-P> :Unite buffer<CR>
@@ -65,9 +65,10 @@ nnoremap <silent> ,is :VimShell<CR>
 nnoremap <silent> ,isp :VimShellPop<CR>
 " 'scrooloose/nerdtree' フォルダ移動
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+" }}}
 
 " ------------------------------------------------
-" Standard
+" Standard {{{
 " ------------------------------------------------
 " 文字コードをUFT-8に設定
 set fenc=utf-8
@@ -88,9 +89,10 @@ set helplang=ja,en
 " 改行時の自動コメントアウト無効
 autocmd FileType * setlocal formatoptions-=r
 autocmd FileType * setlocal formatoptions-=o
+" }}}
 
 " ------------------------------------------------
-" Views
+" Views {{{
 " ------------------------------------------------
 " シンタックスハイライトをON
 syntax enable
@@ -129,9 +131,10 @@ set smarttab
 set tabstop=4
 " 行頭でのTab文字の表示幅
 set shiftwidth=4
+" }}}
 
 " ------------------------------------------------
-" Search
+" Search {{{
 " ------------------------------------------------
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
@@ -145,9 +148,10 @@ set nowrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" }}}
 
 " ------------------------------------------------
-" neocomplcache設定 PHP補完用辞書ファイル
+" neocomplcache設定 PHP補完用辞書ファイル {{{
 " ------------------------------------------------
 " 辞書ファイル
 "autocmd BufRead *.php\|*.ctp\|*.tpl :set dictionary=~/.vim/dictionary/php.dict filetype=php
@@ -160,7 +164,10 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "let g:neocomplcache_caching_percent_in_statusline = 1
 "let g:neocomplcache_enable_skip_completion = 1
 "let g:neocomplcache_skip_input_time = '0.5'
+" }}}
 
 " ------------------------------------------------
-"
+"  {{{
 " ------------------------------------------------
+"
+" }}}

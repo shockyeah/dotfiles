@@ -165,6 +165,11 @@ repo = 'scrooloose/nerdtree'
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 
+# js indent, syntax color
+[[plugins]]
+repo = 'othree/yajs.vim'
+
+# color scheme
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
 
