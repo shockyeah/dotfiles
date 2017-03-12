@@ -157,6 +157,10 @@ hook_add = ''' " {{{
     endfunction
 ''' # }}}
 
+# Vimからブラウザを開く
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
 # フォルダ移動
 [[plugins]]
 repo = 'scrooloose/nerdtree'
