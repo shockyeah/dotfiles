@@ -1,8 +1,9 @@
+### 起動時に必ず読み込むプラグインを定義
 # パッケージ管理
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-# 自動補完
+# auto complete
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
 hook_add = ''' " {{{
@@ -16,12 +17,12 @@ hook_add = ''' " {{{
     inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
     " 各ファイルタイプのオムニ補完を有効化
     augroup OmniCompletionNeocompleteCommands
-      autocmd!
-      autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-      autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-      autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-      autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-      autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+        autocmd!
+        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+        autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+        autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
     augroup END
 ''' # }}}
 
@@ -102,10 +103,6 @@ repo = 'Shougo/neomru.vim'
 [[plugins]]
 repo = 'Shougo/vimshell'
 
-# Node.js入力補完 C+x or C+o
-[[plugins]]
-repo = 'myhere/vim-nodejs-complete'
-
 # カーソル位置の文脈でファイルタイプを変更
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
@@ -157,10 +154,6 @@ hook_add = ''' " {{{
     endfunction
 ''' # }}}
 
-# Vimからブラウザを開く
-[[plugins]]
-repo = 'tyru/open-browser.vim'
-
 # フォルダ移動
 [[plugins]]
 repo = 'scrooloose/nerdtree'
@@ -169,9 +162,13 @@ repo = 'scrooloose/nerdtree'
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 
-# js indent, syntax color
+# ES2015(ES6) syntax highlighter
 [[plugins]]
 repo = 'othree/yajs.vim'
+
+# Vimからブラウザを開く
+[[plugins]]
+repo = 'tyru/open-browser.vim'
 
 # color scheme
 [[plugins]]
