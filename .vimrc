@@ -8,6 +8,12 @@ scriptencoding utf-8
 if &compatible
     set nocompatible
 endif
+" カーソルを行頭，行末で止まらないようにする
+set whichwrap=b,s,h,l,<,>,[,]
+
+" 意図せずfiletypeがonになっているとファイルタイプの検出がうまく動作しないので一度off
+filetype off
+filetype plugin indent off
 
 " ------------------------------------------------  
 " プラグイン設定 {{{
@@ -51,7 +57,7 @@ runtime macros/matchit.vim
 " }}}
 
 " ------------------------------------------------
-" key map {{{
+" keymap {{{
 " ------------------------------------------------
 " 'Shougo/unite.vim' バッファ一覧
 noremap <C-P> :Unite buffer<CR>
@@ -65,7 +71,10 @@ nnoremap <silent> ,is :VimShell<CR>
 nnoremap <silent> ,isp :VimShellPop<CR>
 " 'scrooloose/nerdtree' フォルダ移動
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+" 'tyru/open-browser.vim' vimからmarkdownプレビュー
+nnoremap <silent><C-p> :PrevimOpen<CR>
 " }}}
+
 
 " ------------------------------------------------
 " Standard {{{
