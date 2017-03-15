@@ -161,6 +161,10 @@ repo = 'scrooloose/nerdtree'
 # vim上でNode.js実行 \r
 [[plugins]]
 repo = 'thinca/vim-quickrun'
+hook_add = ''' " {{{
+    # 左右に分割表示
+    let g:quickrun_config={'*': {'split': 'vertical'}}
+''' # }}}
 
 # ES2015(ES6) syntax highlighter
 [[plugins]]
