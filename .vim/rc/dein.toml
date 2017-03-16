@@ -173,4 +173,3 @@ repo = 'tyru/open-browser.vim'
 # color scheme
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
-

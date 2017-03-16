@@ -58,14 +58,14 @@ on_ft = ['toml']
 # ------------------------------------------------
 # javascript
 # ------------------------------------------------
-# js補完
+# js補完 Ctrl+X -> O
 [[plugins]]
 # github repoが無くなったため変更
 #repo = 'teramako/jscomplete-vim'
 repo = 'mattn/jscomplete-vim'
 on_ft = ['javascript'] 
 
-# node.js入力補完
+# node.js入力補完 Ctrl + X -> O
 [[plugins]]
 repo = 'myhere/vim-nodejs-complete'
 on_ft = ['javascript']

@@ -113,8 +113,12 @@ set antialias
 set number
 " 現在の行を強調表示
 set cursorline
+" 行番号のみを強調表示
+hi clear CursorLine
 " 現在の行を強調表示(縦)
 "set cursorcolumn
+" 背景を半透明に
+highlight Normal ctermbg=none
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -157,7 +161,6 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " }}}
-
 
 " ------------------------------------------------
 " others  {{{
