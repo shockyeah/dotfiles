@@ -98,6 +98,8 @@ set helplang=ja,en
 autocmd FileType * setlocal formatoptions-=r
 autocmd FileType * setlocal formatoptions-=o
 " }}}
+" ヤンクした内容を別ウィンドウへもペースト出来るように
+set clipboard+=unnamedplus,unnamed
 
 " ------------------------------------------------
 " Views {{{
