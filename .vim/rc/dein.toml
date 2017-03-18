@@ -6,7 +6,10 @@ repo = 'Shougo/dein.vim'
 # auto complete
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
+on_i = 1
 hook_add = ''' " {{{
+    " オートコンプリートポップアップ
+    let g:acp_enableAtStartup = 1
     " 起動時にneocompleteを有効化する
     let g:neocomplete#enable_at_startup = 1
     " 大文字・小文字を区別せずに補完する
