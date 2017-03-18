@@ -1,13 +1,16 @@
 " ------------------------------------------------  
 " shockyeah's vimrc
 " ------------------------------------------------  
+" vim 8.0 defaults.vim継承
+source $VIMRUNTIME/defaults.vim
+
 set encoding=utf-8
 scriptencoding utf-8
 
 " vi互換モードで起動されたとしてもこれはvimなので互換モードにしない
-if &compatible
-    set nocompatible
-endif
+"if &compatiblea
+"    set nocompatible
+"endif
 " カーソルを行頭，行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
 
@@ -99,7 +102,11 @@ autocmd FileType * setlocal formatoptions-=r
 autocmd FileType * setlocal formatoptions-=o
 " }}}
 " ヤンクした内容を別ウィンドウへもペースト出来るように
-set clipboard+=unnamedplus,unnamed
+"set clipboard+=unnamedplus,unnamed
+nnoremap <silent> <Space>y :.w !pbcopy<CR><CR>
+vnoremap <silent> <Space>y :w !pbcopy<CR><CR>
+nnoremap <silent> <Space>p :r !pbpaste<CR>
+vnoremap <silent> <Space>p :r !pbpaste<CR>
 
 " ------------------------------------------------
 " Views {{{
