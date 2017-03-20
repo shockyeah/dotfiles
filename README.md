@@ -17,10 +17,10 @@ $ vim --version | grep lua
 +lua
 ```
 
- * 既にvimインストール済みの場合は、アンインストール
+ * 既にvimインストール済みの場合は、再インストール
 
 ```
-$ brew uninstall vim
+$ brew reinstall vim --with-lua --with-override-system-vim
 ```
 
 ## Usage

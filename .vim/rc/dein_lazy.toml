@@ -1,4 +1,30 @@
 ### 特定の条件時のみに読み込むプラグインを定義
+# auto complete
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+on_i = 1
+hook_add = ''' " {{{
+    " オートコンプリートポップアップ
+    let g:acp_enableAtStartup = 1
+    " 起動時にneocompleteを有効化する
+    let g:neocomplete#enable_at_startup = 1
+    " 大文字・小文字を区別せずに補完する
+    let g:neocomplete#enable_smart_case = 1
+    " 3文字以上入力すると補完する
+    let g:neocomplete#sources#syntax#min_keyword_length = 3
+    " Tabで補完候補を選択する
+    inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    " 各ファイルタイプのオムニ補完を有効化
+    "augroup OmniCompletionNeocompleteCommands
+    "    autocmd!
+    "    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    "    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    "    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    "    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    "    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+    "augroup END
+''' # }}}
+
 # ------------------------------------------------
 # html
 # ------------------------------------------------
