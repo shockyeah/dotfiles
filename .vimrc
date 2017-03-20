@@ -64,7 +64,7 @@ runtime macros/matchit.vim
 " ------------------------------------------------
 " 'Shougo/unite.vim' バッファ一覧
 noremap <C-P> :Unite buffer<CR>
-" 'Shougo/unite.vim' ファイル一覧
+" 'Shougo/unite.vim' ファイル一覧 Ctrl + n 上の要素へ、Ctrl + p 下の要素へ
 noremap <C-N> :Unite -buffer-name=file file<CR>
 " 'Shougo/neomru.vim' 最近使ったファイル一覧
 noremap <C-Z> :Unite file_mru<CR>
