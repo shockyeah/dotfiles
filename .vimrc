@@ -103,10 +103,7 @@ autocmd FileType * setlocal formatoptions-=o
 " }}}
 " ヤンクした内容を別ウィンドウへもペースト出来るように
 "set clipboard+=unnamedplus,unnamed
-nnoremap <silent> <Space>y :.w !pbcopy<CR><CR>
-vnoremap <silent> <Space>y :w !pbcopy<CR><CR>
-nnoremap <silent> <Space>p :r !pbpaste<CR>
-vnoremap <silent> <Space>p :r !pbpaste<CR>
+set clipboard+=unnamed
 
 " ------------------------------------------------
 " Views {{{
