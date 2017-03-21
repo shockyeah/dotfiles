@@ -5,8 +5,3 @@
 **.swp
 *~
 
-# vim bundles
-.vim/bundle
-
-# dein.vim
-.vim/dein
