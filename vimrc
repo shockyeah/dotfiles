@@ -154,12 +154,16 @@ set shiftwidth=4
 " ------------------------------------------------
 " Auto Complete {{{
 " ------------------------------------------------
-" xml、html自動補完
+" xml、html閉じタグ自動補完
 augroup MyXML
   autocmd!
   autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
   autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
 augroup END
+" カッコ閉じ自動補完
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
 " }}}
 
 " ------------------------------------------------
