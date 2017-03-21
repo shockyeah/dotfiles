@@ -18,6 +18,7 @@ delete_old_files() {
     rm -f $HOME/.vim/rc/dein_lazy.toml
     rm -f $HOME/.vimrc
     rm -f $HOME/.bashrc
+    rm -f $HOME/.gitignore
 }
 
 # 
@@ -27,6 +28,7 @@ create_symlinks() {
     ln -s $DOTSFILE_DIR/dein_lazy.toml $rcdir/dein_lazy.toml
     ln -s $DOTSFILE_DIR/vimrc $HOME/.vimrc
     ln -s $DOTSFILE_DIR/bashrc $HOME/.bashrc
+    ln -s $DOTSFILE_DIR/gitignore $HOME/.gitignore
 }
 
 # -----
